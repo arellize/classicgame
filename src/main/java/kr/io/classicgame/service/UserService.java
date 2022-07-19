@@ -8,13 +8,7 @@ public interface UserService {
 	
 	Usertable getUser(Usertable user);
 	
-	void updateUserName(Usertable user);
-	
-	void updateUserMail(Usertable user);
-	
-	void updateUserPw(Usertable user);
-	
-	void updateUserNickname(Usertable user);
+	void updateUser(Usertable user);
 	
 	void deleteUser(Usertable user);
 	

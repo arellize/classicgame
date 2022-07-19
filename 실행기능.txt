@@ -1,7 +1,7 @@
-update name		- user
-update pw		- user
-update mail		- user
-update nickname	- user, total, cgame123
-delete user		- user, total, cgame123
+update name		- user						1/1
+update pw		- user						1/1
+update mail		- user						1/1
+update nickname	- user, total, cgame123		1/3
+delete user		- user, total, cgame123		
 
-insert cgame123	- cgame123		-연계->		update total	- total
+insert cgame123	- cgame123	3/3		-연계->		update total	- total

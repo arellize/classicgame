@@ -38,30 +38,17 @@ public class UserServiceImpl implements UserService {
 	}
 
 
-	public void updateUserName(Usertable user) {
+	public void updateUser(Usertable user) {
 		Usertable findUser = userRepo.findById(user.getId()).get();
+		
 		findUser.setName(user.getName());
-		userRepo.save(findUser);
-	}
-
-	public void updateUserPw(Usertable user) {
-		Usertable findUser = userRepo.findById(user.getId()).get();
 		findUser.setPw(user.getPw());
-		userRepo.save(findUser);
-	}
-
-	public void updateUserMail(Usertable user) {
-		Usertable findUser = userRepo.findById(user.getId()).get();
 		findUser.setMail(user.getMail());
+		findUser.setNickname(user.getNickname());
+		
 		userRepo.save(findUser);
 	}
 
-	public void updateUserNickname(Usertable user) {
-		Usertable findUser = userRepo.findById(user.getId()).get();
-		findUser.setNickname(user.getNickname());
-		userRepo.save(findUser);
-	}
-	
 	public void deleteUser(Usertable user) {
 		userRepo.deleteById(user.getId());
 	}

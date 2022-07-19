@@ -3,6 +3,7 @@ package kr.io.classicgame.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -49,6 +50,26 @@ public class UserController {
 	public void logout(SessionStatus status) {
 		status.setComplete();
 		System.out.println("로그아웃 완료");
+	}
+	
+	@PostMapping("/updateUser")
+	public String updateUser(@ModelAttribute("User") Usertable user) {
+		if(user.getId() == null) {
+			return "redirect:login";
+		}
+		
+		userService.updateUser(user);
+		return "forward:main";
+	}
+	
+	@GetMapping("/deleteUser")
+	public String deleteUser(@ModelAttribute("User") Usertable user) {
+		if (user.getId() == null) {
+			return "redirect:login";
+		}
+		
+		userService.deleteUser(user);
+		return "forward:main";
 	}
 	
 }
