@@ -12,7 +12,7 @@ import kr.io.classicgame.service.Cgame2Service;
 import kr.io.classicgame.service.Cgame3Service;
 
 @RestController
-public class TotalAndScoreController {
+public class ScoreController {
 
 	@Autowired
 	private Cgame1Service cgame1service;
