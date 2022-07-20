@@ -8,29 +8,25 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/action_page.php">
-        <div class="container">
-            <div class="flux">
+    <div class="login-box">
+        <h2 class="flux">Login</h2>
+        <form action="login" method="post">
+            <div class="user-box">
+                <input type="text" name="id" required>
+                <label>ID</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="pw" required>
+                <label>Password</label>
+            </div>
+            <button type="submit" id="btu" class="login">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 Login
-            </div>
-
-            <span class="input">
-                <h3 class="input-title">ID</h3>
-                <input type="text" id="id" placeholder="아이디를 입력해 주세요" name="id" required>
-
-                <h3 class="input-title">Password</h3>
-                <input type="password" id="pw" placeholder="비밀번호를 입력해 주세요" name="pw" required>
-            </span>
-
-
-            <div class="clearfix">
-                <button type="submit" class="signupbtn"
-                    onclick="location.href='step14_220704project_singUpCreate.html'">로그인</button>
-
-                <button type="submit" id="btu" class="signupbtn">로그인</button>
-
-            </div>
-        </div>
-    </form>
+            </button>
+        </form>
+    </div>
 </body>
 </html>

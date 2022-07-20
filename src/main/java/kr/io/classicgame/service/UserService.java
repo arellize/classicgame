@@ -8,8 +8,8 @@ public interface UserService {
 	
 	Usertable getUser(Usertable user);
 	
-	void updateUser(Usertable user);
+	boolean updateUser(Usertable user);
 	
-	void deleteUser(Usertable user);
+	boolean deleteUser(Usertable user);
 	
 }

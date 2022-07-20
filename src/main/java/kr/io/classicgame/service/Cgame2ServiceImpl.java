@@ -1,5 +1,7 @@
 package kr.io.classicgame.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,24 @@ public class Cgame2ServiceImpl implements Cgame2Service{
 	@Autowired
 	private Cgame2Repository cgame2Repo;
 	
-	public void insertCgame2(Cgame2 cgame2) {
-		cgame2Repo.save(cgame2);
+	public Optional<Cgame2> getNickname(Cgame2 cgame2) {
+		Optional<Cgame2> findNickname = cgame2Repo.findByNickname(cgame2.getNickname());
+		
+		if(findNickname.isPresent()) {
+			return findNickname;
+		} else {
+			return null;
+		}
+	}
+	
+	public boolean insertCgame2(Cgame2 cgame2) {
+
+		boolean result = false;
+
+		if(cgame2.getNickname() != null) {
+			cgame2Repo.save(cgame2);
+			result = true;
+		}
+		return result;
 	}
 }
