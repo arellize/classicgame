@@ -3,17 +3,22 @@ classicgame을 플레이할 수 있는 사이트 만들기
 
 # 2. 설명
 * main page
+* ![main](https://user-images.githubusercontent.com/105897325/216531546-6c0a1eb3-62d1-401a-9100-d0de4bafd35e.png)
   * 로그인 또는 회원가입 버튼을 누르면 signUp.html 또는 login.html으로 이동
   * 게임 아이콘을 누르면 해당 게임의 page로 이동
     * 여러 아이콘이 존재하지만 실제로 가능한 게임은 tetris, 2048, snake 3가지
 
 * login page
+* ![login](https://user-images.githubusercontent.com/105897325/216531626-d4bda4dc-a234-46a8-9e44-d3f8af85eaf3.png)
+* ![classicgame rest api](https://user-images.githubusercontent.com/105897325/216531682-2f2e8318-f65d-4744-aacf-fabf09bac091.png)
   * 로그인 페이지의 가독성과 관리, 보수를 수월하게 하기 위해 css와 js를 분리
   * restful api를 사용하여 다른 팀원과 개발 시 혼선을 줄임
 * user table
+* ![user](https://user-images.githubusercontent.com/105897325/216531721-86aadcb4-f72d-4674-8451-5b4be37765b1.png)
   * @Entity를 사용해 해당 클래스를  jpa로 관리
   * id에 @Id를 붙여 pk(primary key)로 선언
 * UserServiceImpl
+* ![service 기능](https://user-images.githubusercontent.com/105897325/216531765-911c4772-c682-4e34-9678-6afd7a4f2c1f.png)
   * @Service : 캡슐화 없이 모델 내 단독 인터페이스로써 제공되는 동작을 의미
   * getUser method : 입력받은 정보 중 id값을 추출 후 db에 동일한 id값이 존재하는지 확인
     * 만약 존재한다면 해당 id의 정보를 반환
@@ -21,6 +26,7 @@ classicgame을 플레이할 수 있는 사이트 만들기
   * insertUser method : 유저의 정보를 저장하는 메소드
     * getUser method에 id값을 전송 후 받은 값이 null이면 저장, null이 아니면 실패
 * UserController
+* ![classicgame login controller](https://user-images.githubusercontent.com/105897325/216531836-5db14a49-7b06-4543-836c-9155e22a1094.png)
   * @RestController : @Controller + @ResponseBody 가 합쳐진 형태로 Json 형태로 객체 데이터를 반환
   * @PostMapping("/login") : login page에서 post방식으로 login action을 요청을 보냈고 이를 받아 수행하기 위해 사용
   * userService의 getUser에 데이터를 넣어 정보를 받아 findUser에 저장
